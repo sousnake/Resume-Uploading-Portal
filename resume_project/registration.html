@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Registration</title>
+</head>
+<body background="b2.jpg">
+
+<script language = "javascript" type="text/javascript">
+function validate(){
+	if(document.getElementById("text_name").value==""){
+		alert("Please Enter Your Name");
+        document.getElementById("text_name").focus();
+        return false;
+	}
+	if(document.getElementById("text_user").value==""){
+		alert("Please Enter Your User Name");
+        document.getElementById("text_name").focus();
+        return false;
+	}
+	if(document.getElementById("text_pass").value=="")
+    {
+        alert("Please Enter Your Password");
+        document.getElementById("text_pass").focus();
+        return false;
+    }
+
+    if(document.getElementById("text_repass").value=="")
+    {
+        alert("Please ReEnter Your Password");
+        document.getElementById("text_repass").focus();
+        return false;
+    }
+    if(document.getElementById("text_repass").value!="")
+    {
+        if(document.getElementById("text_repass").value != document.getElementById("text_pass").value)
+        {
+            alert("Confirm Password doesnot match!");
+            document.getElementById("text_repass").focus();
+            return false;
+        }
+    }
+	if(document.getElementById("text_sques").value=="")
+	{
+		alert("Please Enter Security Questiion");
+		document.gtElementById("text_sques").focus();
+		return false;
+	}
+	if(document.getElementById("text_sans").value=="")
+	{
+		alert("Please Enter Security Answer");
+		document.gtElementById("text_sans").focus();
+		return false;
+	}
+	return true;
+}
+
+</script>
+<form name = "register" action = "registration.php" method = "post"  onSubmit = "return validate()">
+<center>
+<table bgcolor="#808080" border = "1">
+<tr>
+<td colspan ="2">User Registration Form</td>
+</tr>
+<tr>
+        <td width="179">Name<em>*</em></td>
+    <td><label>
+      <input name="text_name" type="text" id="text_name" />
+    </label></td>
+</tr>
+<tr>
+    <td>User Name<em>*</em></td>
+    <td><label>
+      <input name="text_user" type="text" id="text_user"  />
+    </label></td>
+</tr>
+<tr>
+   <td>Password <em>*</em></td>
+    <td><label>
+      <input name="text_pass" type="password" id="text_pass" />
+    </label></td>
+</tr>
+<tr>
+    <td>Confirm Password <em>*</em></td>
+    <td><label>
+      <input name="text_repass" type="password" id="text_repass" />
+    </label></td>
+</tr>
+<tr>
+    <td width="179">Email address <em>*</em></td>
+    <td><label>
+      <input name="text_email" type="text" id="text_email" />
+    </label></td>
+</tr>
+<tr>
+    <td width="179">Security Question <em>*</em></td>
+    <td><label>
+      <input name="text_sques" type="text" id="text_sques" />
+	  
+    </label></td>
+</tr>
+<tr>
+    <td width="179">Security Answer <em>*</em></td>
+    <td><label>
+      <input name="text_sans" type="text" id="text_sans" />
+    </label></td>
+</tr>
+
+<tr align="center">
+    <td colspan="2"><label>
+      <input type="submit" name="Submit" value="Register" />
+	 <!-- <button type="button" onclick="return validate()">Click</button>-->
+    </label></td>
+ </tr>
+</table>
+</center>
+</form>
+</body>
+</html>
